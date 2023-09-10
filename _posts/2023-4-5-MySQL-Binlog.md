@@ -1,6 +1,6 @@
 title : MySQL Binlog 源码入门
 
-author : 徐明威
+author : Wind Ming
 ---
 
 MySQL主从节点之间同步数据，备份点还原，会用到binary log，其负责记录数据更改的操作。因为Binlog在运用到数据页之前需要经过复杂的过程，没有redolog直接，所以性能比不上直接使用redo复制的方式（[物理复制的优势](https://www.bookstack.cn/read/aliyun-rds-core/30b78cf21d82e781.md)），但是它也有不可或缺的作用。本文重点介绍MySQL Binlog的作用、记录的内容、组织结构、写入方式、主备复制等内容，基于MySQL 8.0的代码。因为网上对Binlog各个知识点的介绍都非常详细，但是知识点非常杂，所以给本人初学Binlog的时候带来很多困难，因此本文的目的是总结这些知识点。
@@ -329,4 +329,4 @@ Binlog文件命名由log_bin_log或log-bin指定，这里假定为binlog，后�
 
 ## 其他参考资料
 
-[1] [物理复制解读](https://www.bookstack.cn/read/aliyun-rds-core/30b78cf21d82e781.md)<br />[2] [MySQL Replication Events – Statement versus Row-Based Formats](https://dbadiaries.com/mysql-replication-events-statement-versus-row-based-formats)<br />[3] [Mysql Binlog Event](https://dev.mysql.com/doc/dev/mysql-server/latest/page_protocol_replication_binlog_event.html)<br />[4] [InnoDB 事务子系统介绍](
+[1] [物理复制解读](https://www.bookstack.cn/read/aliyun-rds-core/30b78cf21d82e781.md)<br />[2] [MySQL Replication Events – Statement versus Row-Based Formats](https://dbadiaries.com/mysql-replication-events-statement-versus-row-based-formats)<br />[3] [Mysql Binlog Event](https://dev.mysql.com/doc/dev/mysql-server/latest/page_protocol_replication_binlog_event.html)<br />[4] [InnoDB 事务子系统介绍](http://mysql.taobao.org/monthly/2015/12/01/)<br />
